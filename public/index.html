@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown + Mermaid 预览服务</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Markdown + Mermaid 预览服务</h1>
+            <p>支持本地路径扫描和手动文件指定的独立预览服务</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>扫描本地目录</h2>
+                <div class="form-group">
+                    <label for="scanPath">输入要扫描的目录路径：</label>
+                    <input type="text" id="scanPath" placeholder="例如: /Users/username/Documents" value="/Users/username/Documents">
+                    <div class="example-paths">
+                        <h4>💡 示例路径：</h4>
+                        <code>/Users/username/Documents/markdown-files</code>
+                        <code>/Users/andy/Documents</code>
+                        <code>/Users/andy/Desktop</code>
+                    </div>
+                </div>
+                <button class="btn" onclick="scanDirectory()">🔍 扫描目录</button>
+                <button class="btn" onclick="clearResults()">🗑️ 清空结果</button>
+                
+                <div id="scanResults"></div>
+            </div>
+            
+            <div class="section">
+                <h2>手动指定文件</h2>
+                <div class="form-group">
+                    <label for="fileUpload">选择Markdown文件：</label>
+                    <input type="file" id="fileUpload" accept=".md,.markdown" multiple>
+                </div>
+                <button class="btn" onclick="uploadFiles()">📤 上传并预览</button>
+                
+                <div id="uploadResults"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/script.js"></script>
+</body>
+</html>
